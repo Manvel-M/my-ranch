@@ -38,6 +38,10 @@ importers:
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
+    devDependencies:
+      wrangler:
+        specifier: ^4.22.0
+        version: 4.22.0(@cloudflare/workers-types@4.20250627.0)
 
 packages:
 

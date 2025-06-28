@@ -19,5 +19,8 @@
     "react-dom": "^19.1.0",
     "resend": "^4.6.0",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "wrangler": "^4.22.0"
   }
 }

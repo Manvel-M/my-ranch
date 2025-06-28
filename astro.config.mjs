@@ -8,10 +8,21 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias:
+        process.env.NODE_ENV === "production"
+          ? {
+              "react-dom/server": "react-dom/server.edge",
+            }
+          : undefined,
+    },
   },
 
   integrations: [react()],
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  }),
 });
