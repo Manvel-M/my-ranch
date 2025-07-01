@@ -1,1 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
+
 @import "tailwindcss";
+
+@theme inline {
+  --font-inter: "Inter", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-border-strong: var(--border-strong);
+
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-surface-strong: var(--surface-strong);
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-slide-up: slide-up 1s ease-out both;
+  --animate-slide-down: slide-down 1s ease-out both;
+  --animate-fade-up: fade-up 1s ease-out both;
+  --animate-fade-in: fade-in 1s ease-out both;
+  --animate-slide-right: slide-right 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    both;
+  --animate-slide-left: slide-left 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    both;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-left {
+    from {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  --background: oklch(0.9881 0.012 210);
+  --foreground: oklch(0.25 0.05 210);
+
+  --primary: oklch(0.6954 0.1075 218.03);
+  --primary-foreground: oklch(0.95 0.01 133);
+
+  --accent: oklch(0.6738 0.1539 354.79);
+  --accent-foreground: oklch(0.95 0.01 133);
+
+  --secondary: oklch(0.9548 0.031 230);
+  --secondary-foreground: oklch(0.25 0.03 230);
+
+  --muted: oklch(0.85 0.04 210);
+  --muted-foreground: oklch(0.4 0.06 210);
+
+  --surface-light: oklch(0.97 0.015 210);
+  --surface: oklch(0.92 0.03 210);
+  --surface-dark: oklch(0.85 0.04 210);
+
+  --border: oklch(0.75 0.035 210);
+  --border-light: oklch(0.9 0.02 210);
+  --border-strong: oklch(0.55 0.045 210);
+}
+
+@layer {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+  body {
+    @apply text-foreground bg-linear-to-b/oklch from-background to-secondary min-h-screen font-inter;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-roboto;
+  }
+  h2 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  h3 {
+    @apply text-lg font-semibold tracking-tight text-primary;
+  }
+}

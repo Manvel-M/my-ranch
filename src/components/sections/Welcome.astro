@@ -1,0 +1,62 @@
+---
+import { InView } from "@/components";
+
+const cardItems = [
+  {
+    name: "Petting Zoo Experience",
+    description:
+      "Kids get close to friendly farm animals for a fun, hands-on experience.",
+  },
+  {
+    name: "Bring your own vision to life",
+    description: "Customize the venue however you want your space, your style.",
+  },
+  {
+    name: "Scenic Hilltop Views",
+    description:
+      "Enjoy stunning 360° views surrounded by orchards and hillside trees.",
+  },
+];
+---
+
+<section
+  class="max-w-7xl mx-auto px-5 py-20 overflow-hidden transition-colors duration-600"
+>
+  <h2 class="text-center mb-6">Welcome to My Ranch</h2>
+  <div class="flex max-lg:flex-wrap justify-center items-center">
+    <div
+      class="w-full max-w-[805px] aspect-[805/500]
+         bg-[url('/g-05.webp')] bg-no-repeat bg-contain bg-center
+         mask-[url('/brush3.png')] mask-no-repeat mask-center mask-contain"
+    >
+    </div>
+
+    <p
+      class="tracking-wide leading-7 text-muted-foreground min-lg:max-w-[600px]"
+    >
+      Introducing MY RANCH, a kid’s private party venue in the heart of Shadow
+      Hills, with 360 views on 3 acres surrounded by a beautiful pomegranate
+      orchard. The meaning of our venue’s name says it all, become the host of
+      your own private ranch while providing your kids and guests with an
+      unforgettable and personalized party experience. Witness your kids’ smiles
+      while they play with furry friends at our petting zoo, and enjoy other
+      kid-friendly activities!
+    </p>
+  </div>
+  <div>
+    <ul class="flex max-lg:flex-wrap gap-5 mt-5">
+      {
+        cardItems.map((item) => (
+          <li
+            class="p-5 bg-surface-light text-secondary-foreground border-y-4 border-border rounded-lg transition-all duration-300 max-lg:w-full opacity-0 select-none hover:border-accent hover:-translate-y-2 hover:shadow-lg active:border-accent active:-translate-y-2 active:shadow-lg"
+            data-inview="animate-slide-left"
+          >
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <InView />
+</section>
