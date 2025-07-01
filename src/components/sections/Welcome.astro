@@ -27,12 +27,14 @@ const cardItems = [
     <div
       class="w-full max-w-[805px] aspect-[805/500]
          bg-[url('/g-05.webp')] bg-no-repeat bg-contain bg-center
-         mask-[url('/brush3.png')] mask-no-repeat mask-center mask-contain"
+         mask-[url('/brush3.png')] mask-no-repeat mask-center mask-contain opacity-0"
+      data-inview="animate-fade-up"
     >
     </div>
 
     <p
-      class="tracking-wide leading-7 text-muted-foreground min-lg:max-w-[600px]"
+      class="tracking-wide leading-7 text-muted-foreground min-lg:max-w-[600px] opacity-0"
+      data-inview="animate-fade-up"
     >
       Introducing MY RANCH, a kid’s private party venue in the heart of Shadow
       Hills, with 360 views on 3 acres surrounded by a beautiful pomegranate
@@ -49,7 +51,7 @@ const cardItems = [
         cardItems.map((item) => (
           <li
             class="p-5 bg-surface-light text-secondary-foreground border-y-4 border-border rounded-lg transition-all duration-300 max-lg:w-full opacity-0 select-none hover:border-accent hover:-translate-y-2 hover:shadow-lg active:border-accent active:-translate-y-2 active:shadow-lg"
-            data-inview="animate-slide-left"
+            data-inview="animate-fade-up"
           >
             <h3>{item.name}</h3>
             <p>{item.description}</p>

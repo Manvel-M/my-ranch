@@ -38,6 +38,8 @@
     both;
   --animate-slide-left: slide-left 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
     both;
+  --animate-fade-right: fade-right 1s ease-out both;
+  --animate-fade-left: fade-left 1s ease-out both;
 
   @keyframes float {
     0%,
@@ -106,6 +108,27 @@
       opacity: 1;
     }
   }
+
+  @keyframes fade-right {
+    from {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fade-left {
+    from {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 :root {
@@ -145,8 +168,11 @@
   h3 {
     @apply font-roboto;
   }
+  h1 {
+    @apply min-md:text-5xl text-4xl font-black tracking-tight;
+  }
   h2 {
-    @apply text-4xl font-bold tracking-tight;
+    @apply min-md:text-4xl text-3xl font-bold tracking-tight;
   }
   h3 {
     @apply text-lg font-semibold tracking-tight text-primary;
