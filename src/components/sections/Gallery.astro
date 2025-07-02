@@ -1,0 +1,119 @@
+---
+import { InView } from "@/components";
+const images = [
+  { src: "/g-01.webp" },
+  { src: "/g-02.webp" },
+  { src: "/g-03.webp" },
+  { src: "/g-04.webp" },
+  { src: "/g-05.webp" },
+  { src: "/g-06.webp" },
+  { src: "/g-07.webp" },
+  { src: "/g-08.webp" },
+  { src: "/g-09.webp" },
+  { src: "/g-10.webp" },
+  { src: "/g-11.webp" },
+];
+---
+
+<!-- <section class="bg-gray-950 py-20">
+  <div class="max-w-7xl mx-auto h-[500px] px-5 overflow-hidden relative">
+    <div
+      id="image-track"
+      class="flex gap-2 absolute select-none"
+      data-mouse-down-at="0"
+      data-prev-percentage="0"
+    >
+      {
+        images.map((image) => (
+          <img
+            src={image.src}
+            alt=""
+            class="image min-lg:w-[40vmin] w-[60vmin] rounded-lg h-[500px] object-cover object-[100%_center] cursor-grab active:cursor-grabbing"
+            draggable="false"
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+<script>
+  const track = document.getElementById("image-track")!;
+
+  // Initialize
+  track.dataset.mouseDownAt = "0";
+  track.dataset.prevPercentage = "0";
+  track.dataset.percentage = "0";
+
+  // Handle drag start
+  const startDrag = (clientX: number) => {
+    track.dataset.mouseDownAt = clientX.toString();
+  };
+
+  // Handle drag end
+  const endDrag = () => {
+    track.dataset.mouseDownAt = "0";
+    track.dataset.prevPercentage = track.dataset.percentage;
+  };
+
+  // Handle drag move (shared by mouse & touch)
+  const handleMove = (clientX: number) => {
+    if (track.dataset.mouseDownAt === "0") return;
+
+    const delta = parseFloat(track.dataset.mouseDownAt!) - clientX;
+    const maxDelta = window.innerWidth / 2;
+
+    const percentage = (delta / maxDelta) * -100;
+    const nextUnconstrained =
+      parseFloat(track.dataset.prevPercentage!) + percentage;
+    const nextPercentage = Math.max(Math.min(nextUnconstrained, 0), -100);
+
+    track.dataset.percentage = nextPercentage.toString();
+
+    // Animate track
+    track.animate(
+      { transform: `translateX(${nextPercentage}%)` },
+      { duration: 1200, fill: "forwards" },
+    );
+
+    // Animate images
+    for (const image of track.getElementsByClassName("image")) {
+      (image as HTMLElement).animate(
+        { objectPosition: `${100 + nextPercentage}% center` },
+        { duration: 1200, fill: "forwards" },
+      );
+    }
+  };
+
+  // Mouse events
+  window.onmousedown = (e) => startDrag(e.clientX);
+  window.onmouseup = endDrag;
+  window.onmousemove = (e) => handleMove(e.clientX);
+
+  // Touch events
+  window.ontouchstart = (e) => startDrag(e.touches[0].clientX);
+  window.ontouchend = endDrag;
+  window.ontouchmove = (e) => handleMove(e.touches[0].clientX);
+</script> -->
+<section class="bg-gray-950 py-20">
+  <div class="max-w-7xl mx-auto px-5">
+    <div
+      id="image-track"
+      data-mouse-down-at="0"
+      data-prev-percentage="0"
+      class="columns-[400px] space-x-3 space-y-3"
+    >
+      {
+        images.map((img) => (
+          <img
+            src={img.src}
+            alt=""
+            class="rounded-lg hover:opacity-80 opacity-0 hover:scale-105 active:scale-105 transition-transform duration-300 hover:shadow-xl active:shadow-xl hover:z-50 active:z-50"
+            draggable="false"
+            data-inview="animate-fade-up"
+          />
+        ))
+      }
+    </div>
+  </div>
+  <InView />
+</section>
