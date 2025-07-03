@@ -1,20 +1,25 @@
 ---
 import { InView } from "@/components";
-
+import Ostrich from "@/assets/icons/ostrich.svg";
+import Party from "@/assets/icons/party.svg";
+import Hill from "@/assets/icons/hill.svg";
 const cardItems = [
   {
     name: "Petting Zoo Experience",
     description:
       "Kids get close to friendly farm animals for a fun, hands-on experience.",
+    icon: Ostrich,
   },
   {
     name: "Bring your own vision to life",
     description: "Customize the venue however you want your space, your style.",
+    icon: Party,
   },
   {
     name: "Scenic Hilltop Views",
     description:
       "Enjoy stunning 360° views surrounded by orchards and hillside trees.",
+    icon: Hill,
   },
 ];
 ---
@@ -50,11 +55,16 @@ const cardItems = [
       {
         cardItems.map((item) => (
           <li
-            class="p-5 bg-surface-light text-secondary-foreground border-y-4 border-border rounded-lg transition-all duration-300 max-lg:w-full opacity-0 select-none hover:border-accent hover:-translate-y-2 hover:shadow-lg active:border-accent active:-translate-y-2 active:shadow-lg"
+            class="px-3 py-5 bg-surface-light text-secondary-foreground border-y-4 border-border rounded-lg transition-all duration-300 max-lg:w-full opacity-0 select-none hover:border-accent hover:-translate-y-2 hover:shadow-lg active:border-accent active:-translate-y-2 active:shadow-lg flex gap-2 items-center"
             data-inview="animate-fade-up"
           >
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
+            <div>
+              <item.icon class="fill-primary size-12 flex-none" />
+            </div>
+            <div>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+            </div>
           </li>
         ))
       }

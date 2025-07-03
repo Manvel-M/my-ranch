@@ -1,0 +1,49 @@
+---
+import { Card } from "@/components/ui";
+import { InView } from "@/components";
+import Check from "@/assets/icons/check.svg";
+import Barn from "@/assets/icons/barn.svg";
+const listItems = [
+  "Stunning Hilltop Property with 360° Views",
+  "Full-Size Playground with Swingset",
+  "Meet and Greet Adorable Animals in the Petting Zoo",
+  "Elegant Wooden Tables, Acrylic Chiavari Chairs, and Cocktail Tables",
+  "Charming Gazebo and Comfortable Lounge Areas",
+  "Exclusive Access to a Beautiful All-White Jumper",
+  "Tastefully Furnished for a Memorable Experience",
+];
+---
+
+<section class="bg-primary text-primary-foreground overflow-hidden">
+  <div class="max-w-7xl px-5 py-20 mx-auto flex max-lg:flex-col max-lg:gap-5">
+    <div class="flex justify-center items-center flex-col flex-1">
+      <Barn
+        class="size-15 stroke-primary-foreground opacity-0"
+        data-inview="animate-fade-up"
+      />
+      <h2 class="opacity-0" data-inview="animate-fade-up">Amenities</h2>
+      <p class="opacity-0" data-inview="animate-fade-up">Max Capacity 150</p>
+    </div>
+    <div
+      class="flex justify-center items-center flex-1 opacity-0"
+      data-inview="animate-fade-in"
+    >
+      <Card class="">
+        <ul class="space-y-5">
+          {
+            listItems.map((item) => (
+              <li
+                class="flex gap-4 items-center opacity-0"
+                data-inview="animate-slide-left"
+              >
+                <Check class="fill-accent stroke-secondary size-[30px] flex-none" />
+                <span class="tracking-wider text-sm font-roboto">{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </Card>
+    </div>
+  </div>
+  <InView />
+</section>

@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div">;
+
+const { ...props } = Astro.props;
+---
+
+<div
+  class="bg-secondary text-secondary-foreground rounded-xl p-10 border border-border-light shadow-xl"
+  {...props}
+>
+  <slot />
+</div>
