@@ -147,9 +147,9 @@
   --muted: oklch(0.85 0.04 210);
   --muted-foreground: oklch(0.4 0.06 210);
 
-  --surface-light: oklch(0.97 0.015 210);
-  --surface: oklch(0.92 0.03 210);
-  --surface-dark: oklch(0.85 0.04 210);
+  --surface-light: oklch(97.444% 0.00797 217.276);
+  --surface: oklch(94.46% 0.02184 211.294);
+  --surface-dark: oklch(87.342% 0.02995 212.762);
 
   --border: oklch(0.75 0.035 210);
   --border-light: oklch(0.9 0.02 210);
