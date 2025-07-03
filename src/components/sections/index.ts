@@ -3,5 +3,6 @@ import Hero from "./Hero.astro";
 import Gallery from "./Gallery.astro";
 import Amenities from "./Amenities.astro";
 import Package from "./Package.astro";
+import Experience from "./Experience.astro";
 
-export { Welcome, Hero, Gallery, Amenities, Package };
+export { Welcome, Hero, Gallery, Amenities, Package, Experience };
