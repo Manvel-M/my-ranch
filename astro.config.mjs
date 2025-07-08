@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
@@ -25,4 +25,14 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "cloudflare",
   }),
+  env: {
+    schema: {
+      RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
+      RESEND_FROM_EMAIL: envField.string({
+        context: "server",
+        access: "public",
+      }),
+      RESEND_TO_EMAIL: envField.string({ context: "server", access: "public" }),
+    },
+  },
 });
