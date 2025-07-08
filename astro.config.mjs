@@ -24,6 +24,9 @@ export default defineConfig({
   integrations: [react()],
   adapter: cloudflare({
     imageService: "compile",
+    platformProxy: {
+      enabled: true,
+    },
   }),
   env: {
     schema: {
