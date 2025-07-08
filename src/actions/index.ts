@@ -21,7 +21,7 @@ export const server = {
       const { data, error } = await resend.emails.send({
         from: `My Ranch <${from}>`,
         to: [to],
-        subject: "New Message",
+        subject: "New Inquiry",
         html,
       });
       if (error) {
