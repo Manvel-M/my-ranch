@@ -22,7 +22,6 @@ function Contact() {
     toast.error("Something went wrong. Try again later.");
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log(data);
     try {
       const { error } = await actions.send(data);
       if (error) {
