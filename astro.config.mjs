@@ -10,6 +10,9 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   output: "server",
   vite: {
+    ssr: {
+      external: ["node:url", "node:fs/promises", "node:path", "node:crypto"],
+    },
     plugins: [tailwindcss()],
     resolve: {
       alias:
