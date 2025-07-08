@@ -36,11 +36,11 @@ function Contact() {
     }
   };
   return (
-    <section className="bg-surface-dark text-surface-dark-foreground">
+    <section className="bg-surface-dark text-surface-dark-foreground py-20">
       <div className="max-w-7xl mx-auto px-5">
         <h2 className="mb-5 text-center">Contact Us</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="min-md:grid min-md:grid-cols-2 max-md: min-md:gap-5 max-md:space-y-5">
             <FormField
               id="first-name"
               label="First Name"
@@ -99,12 +99,13 @@ function Contact() {
                       <Input
                         aria-invalid={!!errors.dateOfEvent}
                         inputMode="none"
+                        style={{ paddingLeft: "2rem" }}
                       />
                     }
                     showIcon
                     toggleCalendarOnIconClick
                     icon={
-                      <div className="absolute top-1/2 -translate-y-1/2">
+                      <div className="top-1/2 -translate-y-1/2">
                         <svg
                           viewBox="0 0 24 24"
                           fill="currentColor"
@@ -139,7 +140,9 @@ function Contact() {
             />
 
             <div className="flex justify-center col-span-2">
-              <Button type="submit">Submit Message</Button>
+              <Button variant="primary" disabled={isSubmitting} type="submit">
+                {isSubmitting ? "Sending" : "Send Message"}
+              </Button>
             </div>
           </div>
         </form>

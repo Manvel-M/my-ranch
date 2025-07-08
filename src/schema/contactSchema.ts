@@ -1,8 +1,8 @@
 import { z } from "astro/zod";
 
 export const contactSchema = z.object({
-  firstName: z.string().min(1, { message: "Please enter first name." }),
-  lastName: z.string().min(1, { message: "Please enter last name." }),
+  firstName: z.string().min(1, { message: "Please enter your first name." }),
+  lastName: z.string().min(1, { message: "Please enter your last name." }),
   email: z.string().email({ message: "Please enter your email." }),
   phone: z
     .string()
