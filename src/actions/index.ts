@@ -17,6 +17,7 @@ export const server = {
     accept: "json",
     input: contactSchema,
     handler: async (input) => {
+      console.log(RESEND_FROM_EMAIL);
       const html = emailTemplate(input);
       const { data, error } = await resend.emails.send({
         from: `My Ranch <${from}>`,
