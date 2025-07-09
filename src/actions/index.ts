@@ -25,6 +25,7 @@ export const server = {
         html,
       });
       if (error) {
+        console.error("Resend API Error", error);
         throw new ActionError({
           code: "BAD_REQUEST",
           message: error.message,
