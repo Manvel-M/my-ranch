@@ -1,0 +1,94 @@
+---
+import { ReviewCard, RatingCard } from "@/components/ui";
+import Google from "@/assets/icons/google.svg";
+import Yelp from "@/assets/icons/yelp.svg";
+
+const reviews = [
+  {
+    abrev: "JL",
+    name: "Jared L",
+    review:
+      "Had our 2 year old twins bday party here and it was absolutely amazing! Just about everything you need if you're looking for a one stop shop kinda place. Linet and her staff were amazing, incredibly responsive and attentive during the party, and the atmosphere is great. Between the petting zoo, the swings, the bounce house, and the playground, the kids were throughly entertained. Lots of space for our party of 60 too! Would definitely throw a party here again!",
+    platform: "yelp",
+    link: "https://www.yelp.com/biz/my-ranch-sun-valley?hrid=5IxCG-uj3L0kht4c9XdAyA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    icon: Yelp,
+  },
+  {
+    abrev: "CW",
+    name: "Clay W",
+    review:
+      "The views! Hidden gem in Shadow Hills! And the petting zoo is adorable! Super friendly staff that make setup a breeze on this mountaintop!",
+    platform: "google",
+    link: "https://g.co/kgs/5KC87Tq",
+    icon: Google,
+  },
+  {
+    abrev: "MT",
+    name: "Marian T",
+    review:
+      "My Ranch is the perfect venue if you want everyone to have a blast. I attended two parties at My Ranch and my daughter did not want to leave they have swings, slides jumpers for the kids and a petting zoo that everyone loves. The location is breathtaking you have a beautiful  360 view. And not to mention Linet and her amazing stuff were so friendly and helpful. Definitely a 10/10!!!",
+    platform: "google",
+    link: "https://g.co/kgs/NTT57D3",
+    icon: Google,
+  },
+  {
+    abrev: "KN",
+    name: "Katia N",
+    review:
+      "My Ranch is a fantastic new venue in LA. I had a wonderful experience here as a guest for a party, and will definitely host my own events here in the future. The staff was super friendly. The setup was great with a gorgeous view. Convenient valet parking. Fun vibes all around. It’s refreshing to see this type of unique venue in the area. Kind of a no-brainer if you’re looking for a venue!",
+    platform: "google",
+    link: "https://g.co/kgs/fGFTfts",
+    icon: Google,
+  },
+  {
+    abrev: "GK",
+    name: "Gohar K",
+    review:
+      "I have been at My Ranch for two parties already and I can honestly tell you that it's the best new venue for birthday parties or for any small parties. Both Kids and adults parties.We celebrated my nephews first birthday party in early July and my cousins 40th late July. Both were very unique and fun. Linet and her team made sure that everything went smoothly and organized. The views are breathtaking from all around the property. The sunset here is magical. There are animals that the kids can pet, there's a swing set, a jumper with a slide and the tables/ chairs are included so no need for rentals.Staff is friendly and helpful.I highly recommend this venue.",
+    platform: "yelp",
+    link: "https://www.yelp.com/biz/my-ranch-sun-valley?hrid=qQh0LIdK04Eg7oPV3YTFYg&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    icon: Yelp,
+  },
+  {
+    abrev: "AL",
+    name: "Arpi L",
+    review:
+      "What a fairytale of a place!Went here for a bridal event which was beautifully set up. It was such a great turnout everyone could not stop talking about!Staff was on top of everything, providing great service and attentiveness!Can't wait to book with them for my next event!",
+    platform: "yelp",
+    link: "https://www.yelp.com/biz/my-ranch-sun-valley?hrid=hmlBhysfxHGG3hALhWtEPA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    icon: Yelp,
+  },
+];
+
+const moreReviews = [
+  {
+    name: "Google",
+    link: "https://www.google.com/search?sxsrf=AE3TifNZrWCASiA3RXQRbhvPU4HZAahxGg:1752116106439&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-Ey3FKEYSPLOfMCU7pQvZReg_FeQjGcL3mkByn2FC5sFou1xKoIGLDOjAkK3G3-9LfiQgHiqtWsbmE4K_9dBRaSzEqhDx&q=My+ranch+Reviews#lrd=0x80c2938d9141fec3:0x9ab36c87d6c6385,1,,,,",
+    icon: Google,
+  },
+  {
+    name: "Yelp",
+    link: "https://www.yelp.com/biz/my-ranch-sun-valley#reviews",
+    icon: Yelp,
+  },
+];
+---
+
+<section class="bg-linear-to-br/oklch from-primary to-accent px-5 py-20">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-center text-background">Customer Reviews</h2>
+    <p class="text-center text-background mb-10">
+      See what our customers are saying about their experience
+    </p>
+    <div class="flex flex-wrap justify-center mb-10 gap-5">
+      {moreReviews.map((review) => <RatingCard moreReview={review} />)}
+    </div>
+    <div class="grid sm:grid-cols-2 min-lg:grid-cols-3 gap-5">
+      {
+        reviews.map((review, i) => (
+          <ReviewCard review={review} style={`--position: ${i + 1};`} />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import Star from "@/assets/icons/star.svg";
+type IconComponent = (props: Record<string, any>) => any;
+type Props = {
+  moreReview: {
+    name: string;
+    icon: IconComponent;
+    link: string;
+  };
+};
+const { moreReview } = Astro.props;
+---
+
+<a
+  href={moreReview.link}
+  target="_blank"
+  class="flex shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+>
+  <div class="flex items-center justify-center bg-surface/30 p-4 rounded-l-lg">
+    <moreReview.icon class="size-10" />
+  </div>
+  <div
+    class="flex flex-col items-center justify-center text-center bg-surface-dark/40 text-surface-dark-foreground text-lg tracking-tight p-4 rounded-r-lg w-[200px]"
+  >
+    <p>Reviews on {moreReview.name}!</p>
+    <div class="flex items-center">
+      {
+        Array.from({ length: 4 }).map((_, i) => (
+          <Star class="size-4 fill-yellow-400" />
+        ))
+      }
+      <div class="relative size-4">
+        <Star class="absolute top-0 left-0 fill-gray-300" />
+        <div class="overflow-hidden w-2 h-full absolute top-0 left-0">
+          <Star class="fill-yellow-400 size-4" />
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

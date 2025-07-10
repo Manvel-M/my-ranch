@@ -5,5 +5,15 @@ import Amenities from "./Amenities.astro";
 import Package from "./Package.astro";
 import Experience from "./Experience.astro";
 import Contact from "./contact/Contact";
+import Reviews from "./Reviews.astro";
 
-export { Welcome, Hero, Gallery, Amenities, Package, Experience, Contact };
+export {
+  Welcome,
+  Hero,
+  Gallery,
+  Amenities,
+  Package,
+  Experience,
+  Contact,
+  Reviews,
+};
