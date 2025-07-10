@@ -25,17 +25,14 @@ const listItems = [
       <p class="opacity-0" data-inview="animate-fade-up">Max Capacity 150</p>
     </div>
     <div
-      class="flex justify-center items-center flex-1 opacity-0"
-      data-inview="animate-fade-in"
+      class="flex justify-center items-center flex-1 opacity-0 [animation-delay:300ms]"
+      data-inview="animate-fade-up"
     >
       <Card>
         <ul class="space-y-5">
           {
             listItems.map((item) => (
-              <li
-                class="flex gap-2 items-center opacity-0"
-                data-inview="animate-slide-left"
-              >
+              <li class="flex gap-2 items-center">
                 <Check class="fill-accent stroke-surface size-[30px] flex-none" />
                 <span class="tracking-wider text-sm font-roboto">{item}</span>
               </li>
