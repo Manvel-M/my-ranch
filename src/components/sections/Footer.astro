@@ -1,0 +1,149 @@
+---
+import Logo from "@/assets/logo.svg";
+import Phone from "@/assets/icons/phone.svg";
+import MapPin from "@/assets/icons/map-pin.svg";
+import { SocialMedia } from "@/components";
+
+const links = [
+  { name: "About", path: "#about" },
+  { name: "Galelry", path: "#gallery" },
+  { name: "Amenities", path: "#amenities" },
+  { name: "Package", path: "#package" },
+  { name: "Contact", path: "#contact" },
+];
+---
+
+<!-- <footer class="bg-surface-dark text-surface-dark-foreground pb-10">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.2316810610814!2d-118.36846468732539!3d34.242631407538674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2938d9141fec3%3A0x9ab36c87d6c6385!2sMy%20ranch!5e0!3m2!1sen!2sus!4v1733911648471!5m2!1sen!2sus"
+    class="h-[350px] w-full"
+    title="Map"
+    style="border:0;"
+    allowfullscreen={false}
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="flex flex-col items-center justify-center pb-5">
+    <Logo class="fill-surface-dark-foreground h-[40px] w-auto mt-10 mb-5" />
+
+    <p class="text-sm">818-319-0948</p>
+    <address class="text-sm mb-5">
+      9480 Sunland Blvd <br />Sun Valley, CA, 91352
+    </address>
+    <SocialMedia />
+  </div>
+  <p class="text-sm text-center">
+    &copy; {new Date().getFullYear()} My Ranch. All Rights Reserved
+  </p>
+</footer> --><!-- <footer class="bg-surface-dark text-muted-foreground">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid md:grid-cols-2 max-md:justify-center">
+
+      <div
+        class="flex flex-col max-md:items-center gap-5 mb-5 min-md:max-w-[300px]"
+      >
+        <Logo class="fill-surface-dark-foreground w-[218px] h-[40px]" />
+        <p class="text-muted-foreground max-md:text-center">
+          Creating unforgettable moments in the heart of nature. Thank you for
+          celebrating with us. We can’t wait to host your next special event.
+        </p>
+        <SocialMedia />
+      </div>
+
+      <div
+        class="flex justify-around gap-5 max-md:flex-col max-md:items-center"
+      >
+
+      <div class="max-md:flex flex-col items-center">
+          <h4 class="mb-4 text-surface-dark-foreground">Contact</h4>
+          <a href="tel:8183190948" class="text-sm flex items-center gap-2 mb-3"
+            ><Phone class="size-4 text-primary" /><span>818-319-0948</span></a
+          >
+          <address class="flex items-center gap-2">
+            <MapPin class="size-4 text-primary" /><span
+              >9480 Sunland Blvd <br />Sun Valley, CA 91352</span
+            >
+          </address>
+          <a href=""></a>
+        </div>
+
+        <div class="max-md:flex flex-col items-center">
+          <h4 class="text-surface-dark-foreground mb-4">Quick Links</h4>
+          <div class="flex flex-col gap-1">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#package">Package</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-[1px] w-full bg-muted-foreground my-5"></div>
+    <div class="flex justify-between pb-5">
+      <p class="text-sm">
+        &copy; {new Date().getFullYear()} My Ranch. All Rights Reserved
+      </p>
+      <a href="">Disclaimer</a>
+    </div>
+  </div>
+</footer> -->
+<footer class="bg-surface-dark text-surface-dark-foreground">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid md:grid-cols-2 max-md:justify-center gap-5">
+      <!-- Branding -->
+      <div class="flex flex-col gap-5 max-md:items-center">
+        <Logo class="fill-surface-dark-foreground w-[218px] h-[40px]" />
+        <p class="text-muted max-md:text-center max-w-[320px]">
+          Creating unforgettable moments in the heart of nature. Thank you for
+          celebrating with us. We can’t wait to host your next special event.
+        </p>
+        <SocialMedia />
+      </div>
+
+      <div
+        class="flex justify-around max-md:items-center max-md:flex-col gap-5"
+      >
+        <!-- Contact -->
+        <div class="flex flex-col max-md:items-center gap-3">
+          <h4>Contact</h4>
+          <a class="flex items-center gap-4" href="tel:8183190948">
+            <Phone class="size-4 text-primary flex-none" />
+            <span class="text-sm text-muted">818-319-0948</span>
+          </a>
+          <address class="flex items-center gap-4">
+            <MapPin class="size-4 text-primary flex-none" />
+            <span class="text-sm text-muted"
+              >9480 Sunland Blvd <br />Sun Valley, CA 91352</span
+            >
+          </address>
+        </div>
+        <!-- Quick links -->
+        <div class="flex flex-col gap-3 max-md:items-center">
+          <h4>Quick Links</h4>
+          <ul class="space-y-1">
+            {
+              links.map((link) => (
+                <li class="text-sm text-muted max-md:text-center ">
+                  <a href={link.path}>{link.name}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Divider -->
+    <div class="h-[1px] w-full bg-muted-foreground my-5"></div>
+    <!-- Copyright -->
+    <div
+      class="flex justify-between pb-5 max-md:flex-col max-md:items-center gap-5"
+    >
+      <p class="text-sm text-muted">
+        &copy; {new Date().getFullYear()} My Ranch. All Rights Reserved
+      </p>
+      <a href="/disclaimer" class="text-muted text-sm"
+        >Event Terms & Conditions</a
+      >
+    </div>
+  </div>
+</footer>

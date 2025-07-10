@@ -185,7 +185,8 @@
   }
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     @apply font-roboto;
   }
   h1 {
@@ -196,5 +197,8 @@
   }
   h3 {
     @apply text-lg font-semibold tracking-tight text-primary;
+  }
+  h4 {
+    @apply text-lg font-semibold tracking-wide;
   }
 }

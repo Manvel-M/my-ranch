@@ -1,0 +1,31 @@
+---
+import Google from "@/assets/icons/google.svg";
+import Yelp from "@/assets/icons/yelp.svg";
+import Ig from "@/assets/icons/ig.svg";
+
+const socialMedia = [
+  { name: "Google", link: "https://g.co/kgs/7Gt5h8Y", icon: Google },
+  {
+    name: "Yelp",
+    link: "https://www.yelp.com/biz/my-ranch-sun-valley",
+    icon: Yelp,
+  },
+  { name: "Ig", link: "https://www.instagram.com/myranch_", icon: Ig },
+];
+---
+
+<div class="flex gap-3">
+  {
+    socialMedia.map((media) => (
+      <a
+        class="inline-flex justify-center items-center size-10 bg-surface-light/20 border border-border-strong rounded-lg hover:-translate-y-1 transition-all duration-300 group"
+        href={media.link}
+        target="_blank"
+        aria-label={`My Ranch ${media.name} page`}
+        rel="noopener noreferrer"
+      >
+        <media.icon class="size-5 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300" />
+      </a>
+    ))
+  }
+</div>
