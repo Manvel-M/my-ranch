@@ -48,7 +48,24 @@ function ButtonFn(
   }: Props,
   ref: ForwardedRef<React.ComponentProps<"button"> | React.ComponentProps<"a">>,
 ) {
-  const base = `inline-flex justify-center border border-border items-center font-medium tracking-wide gap-2 whitespace-nowrap transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:selection select-none`;
+  const base = `
+    inline-flex items-center justify-center gap-2 shrink-0
+    whitespace-nowrap rounded-md text-sm font-medium
+    transition-all outline-none
+    disabled:pointer-events-none disabled:opacity-50
+
+    [&_svg]:pointer-events-none
+    [&_svg]:shrink-0
+    [&_svg:not([class*='size-'])]:size-4
+
+    focus-visible:border-accent
+    focus-visible:ring-border-strong/50
+    focus-visible:ring-[3px]
+
+    aria-invalid:border-error
+    aria-invalid:ring-error/20
+    cursor-pointer
+  `;
 
   const variantClasses: Record<Variant, string> = {
     default: "bg-foreground text-background hover:bg-foreground/80",
