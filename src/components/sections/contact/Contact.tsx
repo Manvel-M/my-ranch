@@ -45,12 +45,14 @@ function Contact() {
               label="First Name"
               error={errors.firstName}
               {...register("firstName")}
+              placeholder="First Name"
             />
             <FormField
               id="last-name"
               label="Last Name"
               error={errors.lastName}
               {...register("lastName")}
+              placeholder="Last Name"
             />
 
             <FormField
@@ -59,6 +61,7 @@ function Contact() {
               error={errors.email}
               type="email"
               {...register("email")}
+              placeholder="Email"
             />
 
             <FormField
@@ -67,6 +70,7 @@ function Contact() {
               error={errors.phone}
               type="tel"
               {...register("phone")}
+              placeholder="Phone"
             />
 
             <FormField
@@ -136,6 +140,7 @@ function Contact() {
               as="textarea"
               className="col-span-2"
               {...register("message")}
+              placeholder="Message"
             />
 
             <div className="flex justify-center col-span-2">
