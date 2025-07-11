@@ -1,0 +1,110 @@
+---
+import { Layout } from "@/layouts";
+
+const terms = [
+  {
+    title: "Cancellation and Rescheduling",
+    items: [
+      "<strong>Notice Requirement:</strong> A minimum of 30 days' notice is required to cancel or reschedule an event.",
+      "<strong>Full Charge:</strong> Failure to provide the required notice will result in the full cost of the event being charged.",
+    ],
+  },
+  {
+    title: "Guest Waivers",
+    items: [
+      "<strong>Mandatory Waivers:</strong> All guests must complete a waiver upon arrival.",
+      "<strong>Access Restriction:</strong> Guests who have not filled out the waiver will not be permitted on the property.",
+    ],
+  },
+  {
+    title: "Service Fee",
+    items: [
+      "<strong>Fee Percentage:</strong> An 18% service fee applies to all events.",
+      "<strong>Purpose of Fee:</strong> This fee is not a tip. It covers: Event planning, Setup and cleanup, Maintenance during the party, Trash disposal",
+    ],
+  },
+  {
+    title: "Valet Parking",
+    items: [
+      "<strong>Exclusion:</strong> Valet parking is not included in the price of your package.",
+    ],
+  },
+  {
+    title: "Payment Terms",
+    items: [
+      "<strong>Final Payment:</strong> The remaining balance is due in full at the end of your party.",
+      "<strong>No Exceptions:</strong> This policy is non-negotiable.",
+    ],
+  },
+  {
+    title: "Alcohol Service",
+    items: [
+      "<strong>Bartender Requirement:</strong> A licensed bartender is required if alcohol will be served during the event.",
+    ],
+  },
+  {
+    title: "Guest Count and Vendor List",
+    items: [
+      "<strong>Final Submission:</strong> Provide the final guest count and vendor list two weeks prior to your event date.",
+    ],
+  },
+  {
+    title: "Child Supervision",
+    items: [
+      "<strong>Responsible Adult:</strong> A responsible adult must accompany each child at all times during the event.",
+    ],
+  },
+  {
+    title: "Music and Entertainment",
+    items: [
+      "<strong>DJ Policy:</strong> DJs are not permitted on the property.",
+      "<strong>Volume Control:</strong> Music must be kept at a respectful volume to ensure a pleasant environment for all guests.",
+    ],
+  },
+  {
+    title: "Vendor Limitations",
+    items: [
+      "<strong>Vendor Cap:</strong> A maximum of four (4) vendors is allowed per event.",
+      "<strong>Additional Charges:</strong> An additional $150 will be charged for each vendor exceeding the four-vendor limit.",
+    ],
+  },
+  {
+    title: "Vendor Insurance",
+    items: [
+      "<strong>Insurance Requirement:</strong> All hired vendors must possess valid insurance.",
+      "<strong>Certificate of Insurance (COI):</strong> Vendors must provide a COI prior to the event date.",
+    ],
+  },
+];
+---
+
+<Layout>
+  <main
+    class="bg-surface-dark text-surface-dark-foreground w-full min-h-screen py-20"
+  >
+    <section class="max-w-5xl mx-auto px-5 flex flex-col items-center">
+      <h2 class="mb-2">Event Terms & Conditions</h2>
+      <p class="text-center text-muted tracking-wide">
+        By booking an event with My Ranch, you agree to the following policies.
+        These are in place to ensure smooth operations and a successful
+        experience for all guests and staff.
+      </p>
+      <div class="h-[1px] w-full bg-muted-foreground my-10"></div>
+      <div class="space-y-2">
+        {
+          terms.map((term) => (
+            <div>
+              <h4 class="">{term.title}</h4>
+              <ul class="text-muted">
+                {term.items.map((item) => (
+                  <li class="ml-5" set:html={item} />
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <a class="mt-10 text-primary" href="/">Return to Home Page</a>
+    </section>
+  </main>
+</Layout>

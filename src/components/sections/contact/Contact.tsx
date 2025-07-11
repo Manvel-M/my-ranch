@@ -35,7 +35,10 @@ function Contact() {
     }
   };
   return (
-    <section className="bg-surface-dark text-surface-dark-foreground py-20">
+    <section
+      id="contact"
+      className="bg-surface-dark text-surface-dark-foreground py-20"
+    >
       <div className="max-w-7xl mx-auto px-5">
         <h2 className="mb-5 text-center">Contact Us</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
