@@ -50,7 +50,7 @@ function ButtonFn(
 ) {
   const base = `
     inline-flex items-center justify-center gap-2 shrink-0
-    whitespace-nowrap rounded-md text-sm font-medium
+    whitespace-nowrap font-medium
     transition-all outline-none
     disabled:pointer-events-none disabled:opacity-50
 
