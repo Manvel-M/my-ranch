@@ -60,6 +60,8 @@ const { review, className, ...props } = Astro.props;
   </div>
 
   <div class="w-full text-right">
-    <a href={review.link} class="text-sm font-semibold">Read More</a>
+    <a href={review.link} class="text-sm font-semibold"
+      >Read More <span class="sr-only">Continue reading review</span></a
+    >
   </div>
 </div>
