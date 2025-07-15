@@ -10,17 +10,21 @@ import {
   Contact,
   Reviews,
   Footer,
+  Header,
 } from "@/components/sections";
 ---
 
 <Layout>
-  <Hero />
-  <Welcome />
-  <Gallery />
-  <Amenities />
-  <Package />
-  <Experience />
-  <Reviews />
-  <Contact client:load />
-  <Footer />
+  <Header />
+  <main class="relative">
+    <Hero />
+    <Welcome />
+    <Gallery />
+    <Amenities />
+    <Package />
+    <Experience />
+    <Reviews />
+    <Contact client:load />
+    <Footer />
+  </main>
 </Layout>

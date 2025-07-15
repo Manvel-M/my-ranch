@@ -7,6 +7,7 @@ import Experience from "./Experience.astro";
 import Contact from "./contact/Contact";
 import Reviews from "./Reviews.astro";
 import Footer from "./Footer.astro";
+import Header from "./Header.astro";
 
 export {
   Welcome,
@@ -18,4 +19,5 @@ export {
   Contact,
   Reviews,
   Footer,
+  Header,
 };
