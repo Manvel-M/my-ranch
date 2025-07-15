@@ -142,7 +142,7 @@
 }
 
 :root {
-  --background: oklch(0.98 0 0);
+  --background: oklch(95.444% 0.0032 15.346);
   --foreground: oklch(0.25 0 0);
 
   --primary: oklch(0.6954 0.1075 218.03);
@@ -181,7 +181,7 @@
     @apply scroll-smooth antialiased;
   }
   body {
-    @apply text-foreground bg-linear-to-b/oklch from-background to-secondary min-h-screen font-inter;
+    @apply text-foreground bg-background min-h-screen font-inter;
   }
   h1,
   h2,
