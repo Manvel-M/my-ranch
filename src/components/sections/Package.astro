@@ -1,6 +1,6 @@
 ---
 import {InView} from '@/components'
-import { Card } from "@/components/ui";
+import { Button, Card } from "@/components/ui";
 import Check from '@/assets/icons/check.svg';
 import Box from '@/assets/icons/package.svg';
 
@@ -66,6 +66,9 @@ const packageItems = [
     <div class="flex-1 flex flex-col justify-center items-center max-lg:order-first">
       <Box class="size-15 opacity-0" data-inview="animate-fade-up" />
       <h2 class="opacity-0 [animation-delay:300ms]"  data-inview="animate-fade-up">Package</h2>
+    </div>
+    <div class="flex justify-center pb-20">
+      <Button variant='default' link href="/terms">Event Terms & Conditions</Button>
     </div>
   </div>
   <InView />
