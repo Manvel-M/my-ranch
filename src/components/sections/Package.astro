@@ -45,9 +45,9 @@ const packageItems = [
 ];
 ---
 
-<section id="package" class="bg-primary text-primary-foreground">
-  <div class="max-w-7xl mx-auto pb-20 px-5 flex max-lg:flex-col max-lg:gap-5">
-    <div class="flex-1 flex justify-center max-lg:order-last opacity-0 [animation-delay:300ms]" data-inview="animate-fade-up">
+<section id="package" class="max-w-7xl mx-auto pb-20 px-5 text-primary-foreground">
+  <div class="flex max-lg:flex-col max-lg:gap-5">
+    <div class="flex-1 flex justify-center max-lg:order-last opacity-0" data-inview="animate-fade-up">
     <Card>
       <div class="space-y-2">
         {packageItems.map((section) => (
@@ -63,13 +63,14 @@ const packageItems = [
       </div>
     </Card>
     </div>
-    <div class="flex-1 flex flex-col justify-center items-center max-lg:order-first">
+    <div class="flex-1 flex flex-col justify-center items-center max-lg:order-first gap-2">
       <Box class="size-15 opacity-0" data-inview="animate-fade-up" />
-      <h2 class="opacity-0 [animation-delay:300ms]"  data-inview="animate-fade-up">Package</h2>
+      <h2 class="opacity-0"  data-inview="animate-fade-up">Package</h2>
+      <p class="text-center min-sm:max-w-[370px] opacity-0 text-primary-foreground/80" data-inview="animate-fade-up">Everything you need for the perfect celebration. Our comprehensive package includes all essentials for an unforgettable party experience.</p>
     </div>
   </div>
-  <div class="flex justify-center pb-20">
-      <Button variant='default' link href="/terms">Event Terms & Conditions</Button>
+  <div class="flex justify-center mt-20">
+      <Button className='hover:-translate-y-1 transition-transform duration-300' rounded='lg' variant='accent' link href="/terms">Event Terms & Conditions</Button>
   </div>
   <InView />
 </section>

@@ -10,6 +10,7 @@ type Variant =
   | "default"
   | "secondary"
   | "primary"
+  | "accent"
   | "error"
   | "success"
   | "ghost";
@@ -72,6 +73,7 @@ function ButtonFn(
     secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
     primary:
       "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent active:text-accent-foreground",
+    accent: "bg-accent text-accent-foreground",
     error: "bg-error text-error-foreground hover:bg-error/80",
     success: "bg-success text-success-foreground hover:bg-success/80",
     ghost: "bg-foreground/10",
