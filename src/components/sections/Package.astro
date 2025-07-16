@@ -49,9 +49,11 @@ const packageItems = [
   <div class="flex max-lg:flex-col max-lg:gap-5">
     <div class="flex-1 flex justify-center max-lg:order-last opacity-0" data-inview="animate-fade-up">
     <Card>
+      <h3 class="text-xl text-center">Legen-Dairy</h3>
+      <div class="h-[1px] w-full bg-accent my-5"></div>
       <div class="space-y-2">
         {packageItems.map((section) => (
-          <h3>{section.title}</h3>
+          <h4>{section.title}</h4>
 
           <ul>
             {section.items.map((item) => (
